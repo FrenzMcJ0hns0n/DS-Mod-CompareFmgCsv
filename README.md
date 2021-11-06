@@ -15,7 +15,46 @@ Tested and compatible with the texts of Dark Souls Remastered & Demon's Souls. I
 The program is written in C#, and hopefully generic enough to be adapted to the text contents of all mods.
 Download the .exe file and reproduce directories structure like the following :
 
-[TODO : Add image]
+```
+.
+│   DS Mod CompareFmgCsv.exe
+│   [log.txt]
+│
+├───Input
+│   ├───Item
+│   │   │   filelist.txt
+│   │   │
+│   │   ├───Mod
+│   │   │       Armors.csv
+│   │   │       Rings.csv
+│   │   │       Weapons.csv
+│   │   │       ...
+│   │   │
+│   │   └───Vanilla
+│   │           Armors.csv
+│   │           Rings.csv
+│   │           Weapons.csv
+│   │           ...
+│   │
+│   └───Menu
+│       │   filelist.txt
+│       │
+│       ├───Mod
+│       │       Conversations.csv
+│       │       Events.csv
+│       │       Movie subtitles.csv
+│       │       ...
+│       │
+│       └───Vanilla
+│               Conversations.csv
+│               Events.csv
+│               Movie subtitles.csv
+│               ...
+│
+└───Output
+    ├───Item
+    └───Menu
+```
 
 In files called filelist.txt, you need to specify the pairs used for comparisons. You need to edit the values yourself, especially if the filenames used in a mod are differents than Vanilla ones (like in Daughter of Ash for instance).
 
