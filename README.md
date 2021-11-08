@@ -25,30 +25,30 @@ Download the .exe file and reproduce directories structure like the following :
 │   │   │   filelist.txt
 │   │   │
 │   │   ├───Mod
-│   │   │       Armors.csv
-│   │   │       Rings.csv
-│   │   │       Weapons.csv
+│   │   │       ArmorNames.fmg.csv
+│   │   │       RingNames.fmg.csv
+│   │   │       WeaponNames.fmg.csv
 │   │   │       ...
 │   │   │
 │   │   └───Vanilla
-│   │           Armors.csv
-│   │           Rings.csv
-│   │           Weapons.csv
+│   │           Armor_name_.fmg.csv
+│   │           Accessory_name_.fmg.csv
+│   │           Weapon_name_.fmg.csv
 │   │           ...
 │   │
 │   └───Menu
 │       │   filelist.txt
 │       │
 │       ├───Mod
-│       │       Conversations.csv
-│       │       Events.csv
-│       │       Movie subtitles.csv
+│       │       Conversations.fmg.csv
+│       │       EventTexts.fmg.csv
+│       │       MovieSubtitles.fmg.csv
 │       │       ...
 │       │
 │       └───Vanilla
-│               Conversations.csv
-│               Events.csv
-│               Movie subtitles.csv
+│               Conversation_.fmg.csv
+│               Event_text_.fmg.csv
+│               Movie_subtitles_.fmg.csv
 │               ...
 │
 └───Output
@@ -56,7 +56,37 @@ Download the .exe file and reproduce directories structure like the following :
     └───Menu
 ```
 
-In files called filelist.txt, you need to specify the pairs used for comparisons. You need to edit the values yourself, especially if the filenames used in a mod are differents than Vanilla ones (like in Daughter of Ash for instance).
+This app tree shows real filenames of (Mod) Daughter of Ash and (Vanilla) Dark Souls : Remastered.
+
+In the files called ```filelist.txt``` you need, for each msg category (i.e. Item and Menu), to specify the CSV files to compare against each other. Mod on the left, Vanilla on the right, and separate these with a comma. 
+
+According to our app tree, the expected contents are the following :
+
+```./Input/Item/filelist.txt```
+```
+ArmorNames.fmg.csv	,	Armor_name_.fmg.csv
+RingNames.fmg.csv	,	Accessory_name_.fmg.csv
+WeaponNames.fmg.csv	,	Weapon_name_.fmg.csv
+```
+
+```./Input/Menu/filelist.txt```
+```
+Conversations.fmg.csv	,	Conversation_.fmg.csv
+EventTexts.fmg.csv      ,	Event_text_.fmg.csv
+MovieSubtitles.fmg.csv	,	Movie_subtitles_.fmg.csv
+```
+
+CSV output files will be created (in ./Output/[Item|Menu] directories), having the same filenames as the Mod input files.
+Those output files will expose the data provided in both input files, with all text IDs from one and the other, and comparisons of values for each one.
+
+```
+ModFilename1[id|Mod_value] , VanillaFilename1[id|Vanilla_value] >> ModFilename1[id|Vanilla_value|Mod_value|Same ?]
+ModFilename2[id|Mod_value] , VanillaFilename2[id|Vanilla_value] >> ModFilename2[id|Vanilla_value|Mod_value|Same ?]
+...
+ModFilenameN[id|Mod_value] , VanillaFilenameN[id|Vanilla_value] >> ModFilenameN[id|Vanilla_value|Mod_value|Same ?]
+```
+
+(yes, all this must become clearer to use)
 
 ## **Why ?**
 
