@@ -113,9 +113,9 @@ The spreasheet provided as reference was not totally up-to-date, so I wanted to 
 
 ## **How to use it**
 
-1) Use Wulf's BND Rebuilder (or equivalent) to extract the FMG files from their .dcx achive
+1) Use Wulf's BND Rebuilder (or equivalent) to extract the FMG files from .dcx achives
 2) Convert input text files from FMG format to CSV (BND Rebuilder bis)
 3) Copy these within the directories structure of this project
-4) Declare these in pairs within the files "filelist.tx"
+4) Declare these in pairs within the files "filelist.txt"
 5) Run the program
 6) Get the output CSV files from the /Output/ subfolders
