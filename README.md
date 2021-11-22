@@ -1,12 +1,11 @@
 # DS-Mod-CompareFmgCsv
 
+:exclamation: You can consider this project obsolete: prefer the newer [DS_TextsMod_Helper](https://github.com/FrenzMcJ0hns0n/DS_TextsMod_Helper).
+
 ## **What ?**
 
 Use this program to compare texts between modded and Vanilla versions of the Souls games.
 It takes CSV files as input, and gives bigger CSV files as output with comparisons of values.
-See this screenshot as preview :
-
-[TODO : Add image]
 
 Tested and compatible with the texts of Dark Souls Remastered & Demon's Souls. I did not check but it should work with DS:PtdE and DS3 as well.
 
@@ -103,7 +102,7 @@ ArmorNames|TextID 2|Vanilla value|Mod value|false
 ...
 ```
 
-(yes, all this must become clearer to use)
+This is tedious and laborious, so the project have been updraded to [DS_TextsMod_Helper](https://github.com/FrenzMcJ0hns0n/DS_TextsMod_Helper).
 
 ## **Why ?**
 
@@ -114,7 +113,7 @@ The spreasheet provided as reference was not totally up-to-date, so I wanted to 
 ## **How to use it**
 
 1) Use Wulf's BND Rebuilder (or equivalent) to extract the FMG files from .dcx achives
-2) Convert input text files from FMG format to CSV (BND Rebuilder bis)
+2) Convert input text files from FMG format to CSV (Wulf's FMG Editor does that)
 3) Copy these within the directories structure of this project
 4) Declare these in pairs within the files "filelist.txt"
 5) Run the program
